@@ -33,6 +33,12 @@ v = "v";
 var w = 1;
 w = "w";
 //console.log(w);
+// undefined & null type
+var value = null;
+value = 'hello';
+value = null;
+value = undefined;
+// console.log(value);
 //union type
 var a;
 a = 1;
@@ -44,6 +50,11 @@ function Display(b) {
 Display('infinity string');
 Display(9);
 Display(true);
+function printStatusCode(code) {
+    // console.log(`My status code is ${code}.`)
+}
+printStatusCode(404);
+printStatusCode('404');
 /***********************array******************************/
 var A;
 A = ['a', 'b', 'c', 'd'];
@@ -97,4 +108,25 @@ var requestType3;
     requestType3[requestType3["id"] = 898] = "id";
     requestType3[requestType3["userId"] = 876] = "userId";
 })(requestType3 || (requestType3 = {}));
-console.log(requestType3);
+// console.log(requestType3);
+//any type
+var userName;
+userName = 'ab';
+userName = 97;
+userName = true;
+userName = [766, 'user'];
+userName = { user: 0, name: 'ab' };
+// console.log(userName);
+// object type
+var user1;
+user1 = { userName: 'jack', usrId: 432 };
+var user01;
+user01 = { userName: 'jack' };
+// console.log(user1);
+console.log(user01);
+var user2;
+user2 = { name: 'jack' };
+// console.
+var user3;
+user3 = [{ name: 'jack', id: 1 }, { name: 'rock', id: 2 }, { name: 'jon', id: 3 },];
+// console.log(user3);
