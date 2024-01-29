@@ -8,7 +8,13 @@ function addNumbers(num1: number, num2: number) {
 }
 addNumbers(20, 30);
 
-//built-in type : number,string,boolean,void
+/************ 
+ * built-in type : 
+ * number,
+ * string,
+ * boolean,
+ * void
+ *************/
 let num: number;
 num = 56;
 //console.log(num);
@@ -27,23 +33,23 @@ function display(): void {
     //console.log('infinity void');
 }
 display();
-//any type
+/************any type************/
 let v: any = 1;
 v = "v";
 //console.log(v);
-//unknown type
+/************unknown type************/
 let w: unknown = 1;
 w = "w";
 //console.log(w);
 
-// undefined & null type
+/************ undefined & null type************/
 let value: string | undefined | null = null;
 value = 'hello';
 value = null;
 value = undefined;
 // console.log(value);
 
-//union type
+/************union type************/
 let a: string | number;
 a = 1;
 a = 'a';
@@ -61,7 +67,7 @@ function printStatusCode(code: string | number) {
 printStatusCode(404);
 printStatusCode('404');
 
-/***********************array******************************/
+/************array************/
 
 let A: string[];
 A = ['a', 'b', 'c', 'd']
@@ -79,12 +85,12 @@ C.sort()
 //console.log(C);
 //console.log(C[5]);
 
-//tuple type
+/************tuple type************/
 let ab: [number, string]
 ab = [77, 'ab']
 // console.log(ab);
 
-//enum type
+/************enum type************/
 /*enum type: 1)numeric
              2)string
              3)heterogenous
@@ -120,7 +126,7 @@ enum requestType3 {
 }
 // console.log(requestType3);
 
-//any type
+/************any type************/
 let userName: any;
 userName = 'ab'
 userName = 97
@@ -129,16 +135,49 @@ userName = [766, 'user']
 userName = { user: 0, name: 'ab' }
 // console.log(userName);
 
-// object type
+/************object type*********/
 let user1: { userName: string, usrId: number };
 user1 = { userName: 'jack', usrId: 432 };
 let user01: { userName: string, usrId?: number };
 user01 = { userName: 'jack' };
 // console.log(user1);
-console.log(user01);
+// console.log(user01);
 let user2: object
 user2 = { name: 'jack' }
 // console.
 let user3: object[]
 user3 = [{ name: 'jack', id: 1 }, { name: 'rock', id: 2 }, { name: 'jon', id: 3 },]
 // console.log(user3);
+
+/************custom type************/
+type custom = { name: string, id: number }
+let user10: custom
+let user20: custom
+let user30: custom
+user10 = { name: 'a', id: 1 }
+user20 = { name: 'b', id: 2 }
+user30 = { name: 'c', id: 3 }
+// console.log([user10, user20, user30]);
+
+/************class************/
+class User {
+    /*properties, methods, constructor*/
+
+    //properties
+    userName: string
+    age: number
+
+    //constructor
+    constructor(userName: string, age: number) {
+        this.userName = userName;
+        this.age = age;
+    }
+
+    // Method
+    display(): void {
+        console.log(`username: ${this.userName}, age: ${this.age}`);
+    }
+
+}
+let user101 = new User('gazi', 23);
+user101.display();

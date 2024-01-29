@@ -6,7 +6,13 @@ function addNumbers(num1, num2) {
     //console.log(num1 + num2);
 }
 addNumbers(20, 30);
-//built-in type : number,string,boolean,void
+/************
+ * built-in type :
+ * number,
+ * string,
+ * boolean,
+ * void
+ *************/
 var num;
 num = 56;
 //console.log(num);
@@ -25,21 +31,21 @@ function display() {
     //console.log('infinity void');
 }
 display();
-//any type
+/************any type************/
 var v = 1;
 v = "v";
 //console.log(v);
-//unknown type
+/************unknown type************/
 var w = 1;
 w = "w";
 //console.log(w);
-// undefined & null type
+/************ undefined & null type************/
 var value = null;
 value = 'hello';
 value = null;
 value = undefined;
 // console.log(value);
-//union type
+/************union type************/
 var a;
 a = 1;
 a = 'a';
@@ -55,7 +61,7 @@ function printStatusCode(code) {
 }
 printStatusCode(404);
 printStatusCode('404');
-/***********************array******************************/
+/************array************/
 var A;
 A = ['a', 'b', 'c', 'd'];
 //console.log(A);
@@ -69,11 +75,11 @@ C = ['C', 'b', 'c', true, 'd', 8, 9, false, 65];
 C.sort();
 //console.log(C);
 //console.log(C[5]);
-//tuple type
+/************tuple type************/
 var ab;
 ab = [77, 'ab'];
 // console.log(ab);
-//enum type
+/************enum type************/
 /*enum type: 1)numeric
              2)string
              3)heterogenous
@@ -109,7 +115,7 @@ var requestType3;
     requestType3[requestType3["userId"] = 876] = "userId";
 })(requestType3 || (requestType3 = {}));
 // console.log(requestType3);
-//any type
+/************any type************/
 var userName;
 userName = 'ab';
 userName = 97;
@@ -117,16 +123,37 @@ userName = true;
 userName = [766, 'user'];
 userName = { user: 0, name: 'ab' };
 // console.log(userName);
-// object type
+/************object type*********/
 var user1;
 user1 = { userName: 'jack', usrId: 432 };
 var user01;
 user01 = { userName: 'jack' };
 // console.log(user1);
-console.log(user01);
+// console.log(user01);
 var user2;
 user2 = { name: 'jack' };
 // console.
 var user3;
 user3 = [{ name: 'jack', id: 1 }, { name: 'rock', id: 2 }, { name: 'jon', id: 3 },];
-// console.log(user3);
+var user10;
+var user20;
+var user30;
+user10 = { name: 'a', id: 1 };
+user20 = { name: 'b', id: 2 };
+user30 = { name: 'c', id: 3 };
+// console.log([user10, user20, user30]);
+/************class************/
+var User = /** @class */ (function () {
+    //constructor
+    function User(userName, age) {
+        this.userName = userName;
+        this.age = age;
+    }
+    // Method
+    User.prototype.display = function () {
+        console.log("username: ".concat(this.userName, ", age: ").concat(this.age));
+    };
+    return User;
+}());
+var user101 = new User('gazi', 23);
+user101.display();
