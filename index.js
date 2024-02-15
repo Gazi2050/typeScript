@@ -1,3 +1,18 @@
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var user = 'jack';
 var age = 20;
 //console.log(age);
@@ -75,6 +90,9 @@ C = ['C', 'b', 'c', true, 'd', 8, 9, false, 65];
 C.sort();
 //console.log(C);
 //console.log(C[5]);
+var D;
+D = [75, 64, 64, 73, 42, 644, 745, 8];
+// console.log(D);
 /************tuple type************/
 var ab;
 ab = [77, 'ab'];
@@ -151,9 +169,36 @@ var User = /** @class */ (function () {
     }
     // Method
     User.prototype.display = function () {
-        console.log("username: ".concat(this.userName, ", age: ").concat(this.age));
+        // console.log(`username: ${this.userName}, age: ${this.age}`);
     };
     return User;
 }());
 var user101 = new User('gazi', 23);
 user101.display();
+/************Inheritance************/
+var User1 = /** @class */ (function () {
+    function User1(userName, age) {
+        this.userName = userName;
+        this.age = age;
+    }
+    User1.prototype.display = function () {
+        console.log("username: ".concat(this.userName, ", age: ").concat(this.age));
+    };
+    return User1;
+}());
+var Student = /** @class */ (function (_super) {
+    __extends(Student, _super);
+    function Student(userName, age, studentId) {
+        var _this = _super.call(this, userName, age) || this;
+        _this.studentId = studentId;
+        return _this;
+    }
+    Student.prototype.display = function () {
+        console.log("username: ".concat(this.userName, ", age: ").concat(this.age, ", id: ").concat(this.studentId));
+    };
+    return Student;
+}(User));
+var student1 = new Student('keya', 31, 1302020015);
+student1.display();
+var user105 = new User('Anisul Islam', 25);
+user105.display();

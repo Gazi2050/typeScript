@@ -85,6 +85,9 @@ C.sort()
 //console.log(C);
 //console.log(C[5]);
 
+let D: readonly number[]
+D = [75, 64, 64, 73, 42, 644, 745, 8]
+// console.log(D);
 /************tuple type************/
 let ab: [number, string]
 ab = [77, 'ab']
@@ -175,9 +178,46 @@ class User {
 
     // Method
     display(): void {
-        console.log(`username: ${this.userName}, age: ${this.age}`);
+        // console.log(`username: ${this.userName}, age: ${this.age}`);
     }
 
 }
 let user101 = new User('gazi', 23);
 user101.display();
+
+/************Inheritance************/
+class User1 {
+    userName: string;
+    age: number;
+
+    constructor(userName: string, age: number) {
+        this.userName = userName;
+        this.age = age;
+    }
+
+    display(): void {
+        console.log(`username: ${this.userName}, age: ${this.age}`);
+    }
+}
+
+class Student extends User {
+    studentId: number;
+
+    constructor(userName: string, age: number, studentId: number) {
+        super(userName, age);
+        this.studentId = studentId;
+    }
+    display(): void {
+        console.log(
+            `username: ${this.userName}, age: ${this.age}, id: ${this.studentId}`
+        );
+    }
+}
+
+let student1 = new Student('keya', 31, 1302020015);
+student1.display();
+
+let user105 = new User('Anisul Islam', 25);
+user105.display();
+
+
